@@ -79,7 +79,7 @@ A) SparkSpreadLeland.m
    - Discretization: N (nodes), NtimesRBF (time levels), nMC (outer repetitions)
 
    Output variables saved in results.mat:
-   - SolVector   : price sample for each outer run
+   - SolVector   : solution (option price) for each outer run
    - time_per_Run: average time per run
    - N           : number of nodes
 
@@ -94,7 +94,7 @@ B) CallOnTheMaxLeland.m
    - Node box: [xMin, xMax]^n controls the log-return domain
 
    Output variables saved in results.mat:
-   - priceSamples: price sample for each outer run
+   - priceSamples: solution (option price) for each outer run
    - timePerRun  : average time per run
    - N, numAssets
 
