@@ -12,7 +12,7 @@ multiquadric radial-basis-function (MQ-RBF) collocation method described in:
 
 The scripts solve high-dimensional option-pricing partial differential equations (PDEs) 
 backward in time. The PDEs are nonlinear because they incorporate transaction costs,
-modeled according to the Leland model, introduced in Hayne E. Leland (1985), 
+modeled according to the Leland model, introduced in H. E. Leland (1985), 
 Option Pricing and Replication with Transaction Costs, The Journal of Finance, 40(5), 
 1283–1301.
 
