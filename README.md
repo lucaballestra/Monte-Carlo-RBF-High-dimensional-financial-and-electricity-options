@@ -10,8 +10,13 @@ multiquadric radial-basis-function (MQ-RBF) collocation method described in:
   L.V. Ballestra (2026), "A Meshless Method for Non-Linear High-Dimensional PDEs:
   Application to Financial and Electricity Options", work in preparation
 
-The scripts solve (backward in time) high-dimensional option-pricing PDEs. Random or
-quasi-Monte Carlo (Sobol) point sets are used as RBF centers; the PDE is then solved
+The scripts solve high-dimensional option-pricing partial differential equations (PDEs) 
+backward in time. The PDEs are nonlinear because they incorporate transaction costs,
+modeled according to the Leland model, introduced in Hayne E. Leland (1985), 
+Option Pricing and Replication with Transaction Costs, The Journal of Finance, 40(5), 
+1283–1301.
+
+Quasi-Monte Carlo (Sobol) point sets are used as RBF centers; the PDE is then solved
 by implicit (or IMEX) Euler time stepping on the resulting collocation system.
 
 Contents
