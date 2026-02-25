@@ -31,11 +31,11 @@ corr(1:numAssets+1:end) = 1;
 spot0 = strike * ones(numAssets,1);
 
 % LEL parameters
-cLEL       = 0.05 * ones(numAssets,1);
+cLEL       = 0.01 * ones(numAssets,1);
 deltaTLEL  = 0.01;
 
 %% Discretization / simulation parameters
-N            = 3000;   % number of nodes (was Ntot)
+N            = 1000;   % number of nodes (was Ntot)
 numTimeSteps = 20;     % (was Nt)
 nMC          = 50;     % outer MC runs (random/QMC node sets)
 
@@ -94,7 +94,7 @@ for mc = 1:nMC
 
     % LEL coefficient (time-independent part)
     lelCoeff = cLEL(:);
-    coefFactor = sqrt(2/(pi*deltaTLEL));
+    coefFactor = 0.5*sqrt(2/(pi*deltaTLEL));
 
     invS = 1 ./ sNodes;   % [d x N]
 
@@ -127,8 +127,8 @@ for mc = 1:nMC
 
             q = sum((bMat * corr) .* bMat, 2);
 
-
-lelTerm = lelTerm + (lelCoeff(i)) * sqrt(max(q,0));
+Si = sNodes(i,:).';    % [N x 1] price asset i at the node
+lelTerm = lelTerm + (lelCoeff(i)) .* Si .* sqrt(max(q,0));
 end
         
         rhs = value + dt * coefFactor * lelTerm;
@@ -282,5 +282,3 @@ end
 mats = struct('A0', A0, 'A1', {A1}, 'A2', {A2});
 
 end
-
-
