@@ -8,8 +8,8 @@ This repository contains two self-contained MATLAB scripts implementing the mesh
 multiquadric radial-basis-function (MQ-RBF) collocation method described in:
 
   L.V. Ballestra (2026), "A Meshless Method for Non-Linear High-Dimensional PDEs:
-  Application to Financial and Electricity Options", SSRN Working Paper, 
-  https://github.com/lucaballestra/Monte-Carlo-RBF-High-dimensional-financial-and-electricity-options](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6312905
+  Application to Financial and Electricity Options", SSRN Working Paper, available at
+  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6312905
 
 The scripts solve high-dimensional option-pricing partial differential equations (PDEs) 
 backward in time. The PDEs are nonlinear because they incorporate transaction costs,
