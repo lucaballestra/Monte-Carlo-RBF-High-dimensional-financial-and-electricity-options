@@ -16,6 +16,10 @@
 
 clearvars; clc;
 
+%% Seed random fisso
+seed = 1;
+rng(seed,'twister');
+
 %% Model / contract parameters (Spark-spread with stochastic vol)
 r = 0.1;      % risk-free rate
 T = 0.5;      % maturity (years)
@@ -53,7 +57,7 @@ cLEL      = 0.01;   % transaction-cost intensity gamma (paper notation)
 deltatLEL = 0.01;  % re-hedging interval (delta t in Leland)
 
 %% Discretization / simulation parameters
-N          = 3000;  % number of RBF centers (collocation nodes)
+N          = 2000;  % number of RBF centers (collocation nodes)
 NtimesRBF  = 20;    % number of time levels (implicit Euler steps are NtimesRBF-1)
 nMC        = 50;    % outer Monte Carlo runs over random/QMC node sets
 
