@@ -129,6 +129,7 @@ for mc = 1:nMC
 
 Si = sNodes(i,:).';    % [N x 1] price asset i at the node
 lelTerm = lelTerm + (lelCoeff(i)) .* Si .* sqrt(max(q,0));
+%lelTerm = lelTerm + (lelCoeff(i)) * sqrt(max(q,0));
 end
         
         rhs = value + dt * coefFactor * lelTerm;
